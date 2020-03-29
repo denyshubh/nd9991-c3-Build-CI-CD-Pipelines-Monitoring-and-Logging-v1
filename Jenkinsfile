@@ -21,7 +21,7 @@ clearpipeline {
       steps {
         withAWS(region: 'us-east-1', credentials: 'aws-static') {
           sh 'echo "Uploading content with AWS credentials"'
-          s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: 'index.html', bucket: 'shubham-static-jenkins-pipeline')
+          s3Upload( file: 'index.html', bucket: 'shubham-static-jenkins-pipeline', path:'/')
         }
 
       }
